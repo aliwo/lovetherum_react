@@ -9,12 +9,9 @@ const GlobalStyles = createGlobalStyle`
     }
     *{
         box-sizing:border-box;
+        font-family:'Noto Serif KR','Times New Roman', Times, serif;
     }
     body{
-        font-family:'Nanum Pen Script','Times New Roman', Times, serif;
-        font-size:12px;
-        background-color:rgba(20, 20, 20, 1);
-        color:white;
         padding-top:50px;
     }
 `;

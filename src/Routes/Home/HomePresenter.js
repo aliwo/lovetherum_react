@@ -59,6 +59,7 @@ const Submit = styled.button`
 
 const HomePresenter = ({
   message,
+  messageLength,
   preventSubmit,
   contentTyping,
   contentSubmit
@@ -71,12 +72,12 @@ const HomePresenter = ({
       <Logo src="https://lovethereum-local.s3.ap-northeast-2.amazonaws.com/logo.png"></Logo>
       <Form method="post" onSubmit={preventSubmit}>
         <SearchTerm
-          placeholder="나의 사랑에게, 140byte 이내로.."
+          placeholder="나의 사랑에게, 140자 이내로.."
           value={message}
           onChange={contentTyping}
         />
         <TextLength>
-          {message.length}/140 <Byte>글자</Byte>
+          {messageLength}/140 <Byte>글자</Byte>
         </TextLength>
         <Submit onClick={contentSubmit}>발행</Submit>
       </Form>

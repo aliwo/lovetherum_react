@@ -6,7 +6,8 @@ const api = axios.create({
 
 const LocalApi = {
   getLocal: () => api.get('local'),
-  postLocal: data => api.post('local', data)
+  postLocal: data => api.post('local', data),
+  getContract: () => api.get('love/contract')
 };
 
 export default LocalApi;

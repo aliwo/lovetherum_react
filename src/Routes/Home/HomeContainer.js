@@ -22,7 +22,7 @@ export default class extends React.Component {
             this.setState({ loading: true });
             const love = await LocalApi.postLocal({ message });
             LocalApi.getContract().then(response =>
-                this.waitContract(response, love)
+                this.waitContract(response, love.data)
             );
         }
         this.setState({ message: '' });

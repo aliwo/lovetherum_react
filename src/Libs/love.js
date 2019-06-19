@@ -7,7 +7,7 @@ export const sendMsg = (contractInfo, loveMsg) => {
     }
     const Contract = web3.eth.contract(contractInfo.abi);
     const contract = Contract.at(contractInfo.address);
-    contract.setMessage(loveMsg.key, loveMsg.message, function (err, result) {
+    contract.setMessage(loveMsg.url, loveMsg.message, function (err, result) {
         console.log(result);
     });
 };

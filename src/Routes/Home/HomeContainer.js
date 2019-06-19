@@ -20,9 +20,9 @@ export default class extends React.Component {
         const { message } = this.state;
         if (message.length !== 0) {
             this.setState({ loading: true });
-            LocalApi.postLocal({ message });
+            const love = await LocalApi.postLocal({ message });
             LocalApi.getContract().then(response =>
-                this.waitContract(response, message)
+                this.waitContract(response, love)
             );
         }
         this.setState({ message: '' });

@@ -1,6 +1,7 @@
 import React from 'react';
 import LockPresenter from './LockPresenter';
 import LoveApi from '../../api';
+import { getMsg } from '../../Libs/love';
 
 export default class extends React.Component {
     state = {
@@ -24,8 +25,7 @@ export default class extends React.Component {
                 params: { id }
             }
         } = this.props;
-
-        LoveApi.getLoveDetail(id).then(this.getMessage);
+        LoveApi.getContract().then(response => getMsg(response.data, id));
     };
 
     render() {

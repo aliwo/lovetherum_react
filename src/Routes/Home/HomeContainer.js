@@ -22,7 +22,7 @@ export default class extends React.Component {
             this.setState({ loading: true });
             const love = await LoveApi.postLove({ message });
             LoveApi.getContract().then(response =>
-                this.waitContract(response, love.data)
+                this.sendMessage(response, love.data)
             );
         }
         this.setState({ message: '' });
@@ -37,7 +37,8 @@ export default class extends React.Component {
             this.setState({ message: value, messageLength: length });
     };
 
-    waitContract = (response, message) => {
+    // callback / 최신 컨트렉트 정보를 전달
+    sendMessage = (response, message) => {
         console.log(response);
         this.setState({ loading: false });
         sendMsg(response.data, message);

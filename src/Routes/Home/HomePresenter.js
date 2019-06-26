@@ -11,6 +11,8 @@ const Container = styled.div`
     font-size: 30px;
 `;
 const Logo = styled.img`
+    width: 100px;
+    height: 100px;
     margin: 50px;
 `;
 const Form = styled.form`
@@ -72,7 +74,7 @@ const HomePresenter = ({
             <title>lovethereum | 사랑의 자물쇠</title>
         </Helmet>
         <Container>
-            <Logo src="https://lovethereum-local.s3.ap-northeast-2.amazonaws.com/logo.png"></Logo>
+            <Logo src="https://seoul-p-studio.bunjang.net/product/83183224_1_1523882302_w640.jpg"></Logo>
             {loading ? (
                 <LoadingIcon src="https://media2.giphy.com/media/17mNCcKU1mJlrbXodo/giphy.gif?cid=790b76115d0a1bee4c6c456f2e57d260&rid=giphy.gif" />
             ) : (

@@ -7,7 +7,7 @@ const api = axios.create({
 const LoveApi = {
     postLove: data => api.post('love', data),
     getLoveDetail: id => api.get(`love/${id}`),
-    getContract: () => api.get('love/contract')
+    getContract: () => api.get('contract')
 };
 
 export default LoveApi;

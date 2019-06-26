@@ -12,20 +12,15 @@ export default class extends React.Component {
         this.getData();
     }
 
-    getMessage = res => {
-        const {
-            data: { message }
-        } = res;
-        this.setState({ message });
-    };
-
     getData = () => {
         const {
             match: {
                 params: { id }
             }
         } = this.props;
-        LoveApi.getContract().then(response => getMsg(response.data, id));
+        LoveApi.getContract().then(response => getMsg(response.data, id, (message) => {
+            this.setState({ message })
+        }));
     };
 
     render() {

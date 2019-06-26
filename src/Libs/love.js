@@ -38,9 +38,9 @@ export const sendMsg = (contractInfo, loveMsg, afterSend) => {
     });
 };
 
-export const getMsg = (contractInfo, key) => {
+export const getMsg = (contractInfo, key, callback) => {
     const contract = createContract(contractInfo);
     contract.getMessage(key, function(error, result) {
-        console.log(result);
+        callback(result);
     });
 };

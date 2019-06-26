@@ -1,6 +1,6 @@
 import React from 'react';
 import LockPresenter from './LockPresenter';
-import LocalApi from '../../api';
+import LoveApi from '../../api';
 
 export default class extends React.Component {
     state = {
@@ -25,7 +25,7 @@ export default class extends React.Component {
             }
         } = this.props;
 
-        LocalApi.getLock(id).then(this.getMessage);
+        LoveApi.getLoveDetail(id).then(this.getMessage);
     };
 
     render() {

@@ -4,11 +4,10 @@ const api = axios.create({
     baseURL: 'http://localhost:4000/'
 });
 
-const LocalApi = {
-    getLocal: () => api.get('local'),
-    postLocal: data => api.post('local', data),
-    getLock: id => api.get(`local/lock/${id}`),
+const LoveApi = {
+    postLove: data => api.post('love', data),
+    getLoveDetail: id => api.get(`love/${id}`),
     getContract: () => api.get('love/contract')
 };
 
-export default LocalApi;
+export default LoveApi;

@@ -1,6 +1,6 @@
 import React from 'react';
 import HomePresenter from './HomePresenter';
-import LocalApi from '../../api';
+import LoveApi from '../../api';
 import { sendMsg } from '../../Libs/love';
 
 export default class extends React.Component {
@@ -20,8 +20,8 @@ export default class extends React.Component {
         const { message } = this.state;
         if (message.length !== 0) {
             this.setState({ loading: true });
-            const love = await LocalApi.postLocal({ message });
-            LocalApi.getContract().then(response =>
+            const love = await LoveApi.postLove({ message });
+            LoveApi.getContract().then(response =>
                 this.waitContract(response, love.data)
             );
         }

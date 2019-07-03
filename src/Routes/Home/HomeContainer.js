@@ -1,5 +1,6 @@
 /* global web3 */
 import React from 'react';
+import Popup from 'react-popup';
 import HomePresenter from './HomePresenter';
 import LoveApi from '../../api';
 import { sendMsg } from '../../Libs/love';
@@ -13,8 +14,8 @@ export default class extends React.Component {
 
     componentDidMount() {
         // love 를 import 하는 순간에 web3 상태를 확인합니다.
-        if (!web3) {
-            console.log('asdf');
+        if (!window.web3) {
+            Popup.alert('니 메타마스크 없음! 줄여서 니메미~');
         } else {
             console.log('fgdg');
         }

@@ -1,3 +1,4 @@
+/* global web3 */
 import React from 'react';
 import HomePresenter from './HomePresenter';
 import LoveApi from '../../api';
@@ -10,7 +11,14 @@ export default class extends React.Component {
         loading: false
     };
 
-    componentDidMount() {}
+    componentDidMount() {
+        // love 를 import 하는 순간에 web3 상태를 확인합니다.
+        if (!web3) {
+            console.log('asdf');
+        } else {
+            console.log('fgdg');
+        }
+    }
 
     preventSubmit = e => {
         e.preventDefault();

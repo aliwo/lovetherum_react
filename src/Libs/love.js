@@ -1,9 +1,5 @@
 /* global web3 */
 
-// love 를 import 하는 순간에 web3 상태를 확인합니다.
-if (!web3) {
-    throw Error('METAMASK_NOT_FOUND');
-}
 /*
 web3.eth.getAccounts((err, result) => console.log(err, result));
 

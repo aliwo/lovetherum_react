@@ -17,7 +17,7 @@ export default class extends React.Component {
         if (!window.web3) {
             Popup.alert('니 메타마스크 없음! 줄여서 니메미~');
         } else {
-            console.log('fgdg');
+            console.log('web3 인식 되었습니다.');
         }
     }
 
@@ -73,3 +73,4 @@ export default class extends React.Component {
         );
     }
 }
+

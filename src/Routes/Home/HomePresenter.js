@@ -9,6 +9,9 @@ const Container = styled.div`
     align-items: center;
     padding: 10px;
     font-size: 30px;
+    background-color: #f6e0e8;
+    background-image: url("/images/background.png");
+    background-size: 120px;
 `;
 const Logo = styled.img`
     width: 100px;

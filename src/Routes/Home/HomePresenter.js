@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
+import background from './background.png';
 
 const Container = styled.div`
     display: flex;
@@ -10,7 +11,7 @@ const Container = styled.div`
     padding: 10px;
     font-size: 30px;
     background-color: #f6e0e8;
-    background-image: url("/images/background.png");
+    background-image: url(${background});
     background-size: 120px;
 `;
 const Logo = styled.img`

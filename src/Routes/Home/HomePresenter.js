@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import background from './background.png';
+import textbox from './textbox.png';
 
 const Container = styled.div`
     display: flex;
@@ -39,39 +40,39 @@ const TextInputBack = styled.div`
     top: 10px;
     padding: 2.5px;
     position: relative;
-    background: linear-gradient(
-        45deg,
-        #feda75,
-        #fa7e1e,
-        #d62976,
-        #962fbf,
-        #4f5bd5
-    );
-    background: linear-gradient(to right, #fc5c7d, #6a82fb);
-    background: linear-gradient(45deg, #c9ffbf, #ffafbd);
     border-radius: 10px;
 `;
 const TextInput = styled.textarea`
-    position: static;
-    text-align: center;
-    resize: none;
-    outline: none;
-    @media screen and (min-width: 400px) {
-        font-size: 15px;
-        width: 70vw;
+    & {
+        position: static;
+        text-align: center;
+        resize: none;
+        outline: none;
+        @media screen and (min-width: 400px) {
+            font-size: 15px;
+            width: 70vw;
+        }
+        @media screen and (min-width: 900px) {
+            font-size: 20px;
+            width: 50vw;
+        }
+        @media screen and (min-width: 1200px) {
+            font-size: 25px;
+            width: 40vw;
+        }
+        overflow-x: hidden;
+        height: 280px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        background: url("${textbox}");
+        background-size: contain;
+        background-repeat:no-repeat;
+    }   
+    
+    &::placeholder {
+        color: white;
     }
-    @media screen and (min-width: 900px) {
-        font-size: 20px;
-        width: 50vw;
-    }
-    @media screen and (min-width: 1200px) {
-        font-size: 25px;
-        width: 40vw;
-    }
-    overflow-x: hidden;
-    height: 280px;
-    border: none;
-    border-radius: 10px;
 `;
 const TextLength = styled.span`
     position: relative;

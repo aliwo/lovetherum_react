@@ -9,11 +9,16 @@ const GlobalStyles = createGlobalStyle`
     }
     *{
         box-sizing:border-box;
-        font-family:'Noto Serif KR','Times New Roman', Times, serif;
+        font-family: 'YoonGothic';
     }
     body{
         padding-top:50px;
     }
+    @font-face {
+        font-family: 'YoonGothic';
+        src: url("/yoon_gothic_340.ttf") format('truetype');
+    }
+    
 `;
 
 export default GlobalStyles;

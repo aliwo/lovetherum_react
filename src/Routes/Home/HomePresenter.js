@@ -1,8 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled from 'styled-components';
+import styled, { createGlobalStyle  } from 'styled-components';
+import { Line } from 'rc-progress';
+
 import background from './background.png';
 import textbox from './textbox.png';
+
+
 
 const Container = styled.div`
     display: flex;
@@ -44,20 +48,24 @@ const TextInputBack = styled.div`
 `;
 const TextInput = styled.textarea`
     & {
+        padding: 10px 20px 0px 40px;
         position: static;
         text-align: center;
         resize: none;
         outline: none;
         @media screen and (min-width: 400px) {
-            font-size: 15px;
+            font-size: 0.9rem;
+            line-height: 2;
             width: 70vw;
         }
         @media screen and (min-width: 900px) {
-            font-size: 20px;
+            font-size: 1.1rem;
+            line-height: 2;
             width: 50vw;
         }
         @media screen and (min-width: 1200px) {
-            font-size: 25px;
+            font-size: 1.3rem;
+            line-height: 2;
             width: 40vw;
         }
         overflow-x: hidden;
@@ -133,10 +141,10 @@ const HomePresenter = ({
                         />
                     </TextInputBack>
                     <TextLength>
-                        {messageLength}/140 <Byte>글자</Byte>
+                        <ProgressBar> </ProgressBar>
                     </TextLength>
                     <SubmitBack>
-                        <Submit onClick={contentSubmit}>발행</Submit>
+                        <Submit onClick={contentSubmit}>GO</Submit>
                     </SubmitBack>
                 </Form>
             )}

@@ -1,19 +1,15 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import styled, { createGlobalStyle  } from 'styled-components';
-import { Line } from 'rc-progress';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import background from './background.png';
 import textbox from './textbox.png';
-
-
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
     font-size: 30px;
     background-color: #f6e0e8;
     background-image: url(${background});
@@ -140,9 +136,7 @@ const HomePresenter = ({
                             onChange={contentTyping}
                         />
                     </TextInputBack>
-                    <TextLength>
-                        <ProgressBar> </ProgressBar>
-                    </TextLength>
+                    <TextLength>{messageLength}</TextLength>
                     <SubmitBack>
                         <Submit onClick={contentSubmit}>GO</Submit>
                     </SubmitBack>

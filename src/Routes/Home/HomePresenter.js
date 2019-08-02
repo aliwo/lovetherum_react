@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
 
+import { tsPropertySignature } from '@babel/types';
 import background from './background.png';
 import textbox from './textbox.png';
 
@@ -23,68 +24,72 @@ const Logo = styled.img`
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
     margin-bottom: 200px;
+    overflow: hidden;
 `;
 const TextInputBack = styled.div`
-    @media screen and (min-width: 400px) {
-        width: 70vw+10px;
-    }
-    @media screen and (min-width: 900px) {
-        width: 50vw+10px;
-    }
-    @media screen and (min-width: 1200px) {
-        width: 40vw+10px;
-    }
-    height: 285px;
-    top: 10px;
+    position:static;
+    background: url("${textbox}");
+    background-size: cover;
+    background-repeat:no-repeat;
+    width: 60vw;
+    height: calc(60vw*1622/4674);
     padding: 2.5px;
-    position: relative;
-    border-radius: 10px;
+    margin-bottom:20px;
 `;
 const TextInput = styled.textarea`
     & {
         padding: 10px 20px 0px 40px;
-        position: static;
         text-align: center;
+        font-color: white;
         resize: none;
         outline: none;
+        width: 100%;
         @media screen and (min-width: 400px) {
             font-size: 0.9rem;
             line-height: 2;
-            width: 70vw;
         }
         @media screen and (min-width: 900px) {
             font-size: 1.1rem;
             line-height: 2;
-            width: 50vw;
         }
         @media screen and (min-width: 1200px) {
             font-size: 1.3rem;
             line-height: 2;
-            width: 40vw;
         }
-        overflow-x: hidden;
-        height: 280px;
+        height: 70%;
         border: none;
-        border-radius: 10px;
-        color: white;
-        background: url("${textbox}");
-        background-size: contain;
-        background-repeat:no-repeat;
-    }   
-    
+        background: rgba(0, 0, 0, 0);
+    }
+
     &::placeholder {
         color: white;
     }
 `;
-const TextLength = styled.span`
+const ProgressContainer = styled.div`
+    width: 100%;
+    height: 30%;
+`;
+const ProgressBackground = styled.div`
     position: relative;
-    top: -20px;
-    left: -10px;
+    top: calc(50% - 7.5px);
+    vertical-align: middle;
+    float: right;
+    margin-right: 5%;
+    width: 40%;
+    border: solid;
+    border-color: #d90467;
+`;
+const ProgressForeground = styled.div`
+    width: calc(20% + ${props => props.messageLength} / 140 * 80%);
+    height: 15px;
+    background-color: #d90467;
+`;
+const MessageLength = styled.div`
     text-align: right;
-    color: rgba(1, 1, 1, 0.4);
-    font-size: 20px;
+    color: white;
+    font-size: 12px;
+    margin-right: 5px;
 `;
 const Byte = styled.span`
     font-size: 15px;
@@ -135,8 +140,18 @@ const HomePresenter = ({
                             value={message}
                             onChange={contentTyping}
                         />
+                        <ProgressContainer>
+                            <ProgressBackground>
+                                <ProgressForeground
+                                    messageLength={Number(messageLength)}
+                                >
+                                    <MessageLength>
+                                        {messageLength}
+                                    </MessageLength>
+                                </ProgressForeground>
+                            </ProgressBackground>
+                        </ProgressContainer>
                     </TextInputBack>
-                    <TextLength>{messageLength}</TextLength>
                     <SubmitBack>
                         <Submit onClick={contentSubmit}>GO</Submit>
                     </SubmitBack>

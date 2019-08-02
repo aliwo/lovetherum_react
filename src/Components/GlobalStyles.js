@@ -12,7 +12,6 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'YoonGothic';
     }
     body{
-        padding-top:50px;
     }
     @font-face {
         font-family: 'YoonGothic';

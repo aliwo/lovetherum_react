@@ -118,6 +118,7 @@ const HomePresenter = ({
     messageLength,
     loading,
     redirect,
+    redirectUrl,
     preventSubmit,
     contentTyping,
     contentSubmit
@@ -155,7 +156,7 @@ const HomePresenter = ({
                     </SubmitBack>
                 </Form>
             )}
-            {redirect && <Redirect to="/love/123" />}
+            {redirect && <Redirect to={`/love/${redirectUrl}`} />}
         </Container>
     </>
 );

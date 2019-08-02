@@ -9,13 +9,15 @@ export default class extends React.Component {
     state = {
         message: '',
         messageLength: 0,
-        loading: false
+        loading: false,
+        modalShow: false,
     };
 
     componentDidMount() {
         // love 를 import 하는 순간에 web3 상태를 확인합니다.
         if (!window.web3) {
             Popup.alert('니 메타마스크 없음! 줄여서 니메미~');
+            this.setState({ modalShow: true });
         } else {
             console.log('web3 인식 되었습니다.');
         }
@@ -60,7 +62,7 @@ export default class extends React.Component {
     };
 
     render() {
-        const { message, messageLength, loading } = this.state;
+        const { message, messageLength, loading, modalShow } = this.state;
         return (
             <HomePresenter
                 message={message}
@@ -69,6 +71,7 @@ export default class extends React.Component {
                 preventSubmit={this.preventSubmit}
                 contentTyping={this.contentTyping}
                 contentSubmit={this.contentSubmit}
+                modalShow={modalShow}
             />
         );
     }

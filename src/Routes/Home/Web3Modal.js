@@ -1,10 +1,7 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import Modal from '../../Components/Modal';
 import styled, { createGlobalStyle } from 'styled-components';
 
-import background from './background.png';
-import textbox from './textbox.png';
 
 const Container = styled.div`
     display: flex;
@@ -113,14 +110,14 @@ const Submit = styled.button`
 const LoadingIcon = styled.img``;
 
 const HomePresenter = ({
-    message,
-    messageLength,
-    loading,
-    preventSubmit,
-    contentTyping,
-    contentSubmit,
-    modalShow,
-}) => (
+                           message,
+                           messageLength,
+                           loading,
+                           preventSubmit,
+                           contentTyping,
+                           contentSubmit,
+                           modalShow,
+                       }) => (
     <>
         <Helmet>
             <title>lovethereum | 사랑의 자물쇠</title>

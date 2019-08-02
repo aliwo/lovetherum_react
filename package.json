@@ -19,7 +19,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "product": "node server.js",
+        "product": "serve -s build -l 80",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"

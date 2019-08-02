@@ -11,6 +11,8 @@ export default class extends React.Component {
         messageLength: 0,
         loading: false,
         modalShow: false,
+        redirect: false,
+        redirectUrl: ''
     };
 
     componentDidMount() {
@@ -50,9 +52,12 @@ export default class extends React.Component {
 
     // callback / 최신 컨트렉트 정보를 전달
     sendMessage = (response, message) => {
-        console.log(response);
-        this.setState({ loading: false });
         sendMsg(response.data, message);
+        this.setState({
+            loading: false,
+            redirect: true,
+            redirectUrl: response.data.url
+        });
     };
 
     checkLength = value => {
@@ -62,12 +67,22 @@ export default class extends React.Component {
     };
 
     render() {
-        const { message, messageLength, loading, modalShow } = this.state;
+        const {
+            message,
+            messageLength,
+            loading,
+            modalShow,
+            redirect,
+            redirectUrl
+        } = this.state;
         return (
             <HomePresenter
                 message={message}
                 messageLength={messageLength}
                 loading={loading}
+                redirect={redirect}
+                redirectUrl={redirectUrl}
+                // message :id 보내주기
                 preventSubmit={this.preventSubmit}
                 contentTyping={this.contentTyping}
                 contentSubmit={this.contentSubmit}
@@ -76,4 +91,3 @@ export default class extends React.Component {
         );
     }
 }
-

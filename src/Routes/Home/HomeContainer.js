@@ -9,7 +9,8 @@ export default class extends React.Component {
     state = {
         message: '',
         messageLength: 0,
-        loading: false
+        loading: false,
+        redirect: false;
     };
 
     componentDidMount() {
@@ -49,8 +50,8 @@ export default class extends React.Component {
     // callback / 최신 컨트렉트 정보를 전달
     sendMessage = (response, message) => {
         console.log(response);
-        this.setState({ loading: false });
         sendMsg(response.data, message);
+        this.setState({ loading: false, redirect: true });
     };
 
     checkLength = value => {
@@ -60,12 +61,14 @@ export default class extends React.Component {
     };
 
     render() {
-        const { message, messageLength, loading } = this.state;
+        const { message, messageLength, loading, redirect } = this.state;
         return (
             <HomePresenter
                 message={message}
                 messageLength={messageLength}
                 loading={loading}
+                redirect={redirect}
+                // message :id 보내주기
                 preventSubmit={this.preventSubmit}
                 contentTyping={this.contentTyping}
                 contentSubmit={this.contentSubmit}

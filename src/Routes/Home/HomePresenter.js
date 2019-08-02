@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled, { createGlobalStyle } from 'styled-components';
+import { Redirect } from 'react-router-dom';
 
-import { tsPropertySignature } from '@babel/types';
 import background from './background.png';
 import textbox from './textbox.png';
 
@@ -91,9 +91,6 @@ const MessageLength = styled.div`
     font-size: 12px;
     margin-right: 5px;
 `;
-const Byte = styled.span`
-    font-size: 15px;
-`;
 const SubmitBack = styled.div`
     width: 102.5px;
     height: 52.5px;
@@ -120,6 +117,7 @@ const HomePresenter = ({
     message,
     messageLength,
     loading,
+    redirect,
     preventSubmit,
     contentTyping,
     contentSubmit
@@ -157,6 +155,7 @@ const HomePresenter = ({
                     </SubmitBack>
                 </Form>
             )}
+            {redirect && <Redirect to="/love/123" />}
         </Container>
     </>
 );

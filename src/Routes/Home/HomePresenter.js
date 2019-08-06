@@ -2,10 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
-
-import textbox from './textbox.png';
 import Web3Modal from '../../Components/Web3Modal';
-import { Colors } from '../../vars';
+import { Colors, Assets } from '../../vars';
 
 const Container = styled.div`
     display: flex;
@@ -27,7 +25,7 @@ const Form = styled.form`
 `;
 const TextInputBack = styled.div`
     position:static;
-    background: url("${textbox}");
+    background: url("${Assets.textbox}");
     background-size: cover;
     background-repeat:no-repeat;
     width: 60vw;

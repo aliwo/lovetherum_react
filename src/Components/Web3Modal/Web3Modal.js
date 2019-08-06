@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modal from '../Modal';
-
-import imgChromeAppStore from './chrome_app_store.png';
-import imgMetamask from './metamask.png';
+import { Assets } from '../../vars';
 
 const Web3Alert = styled.div`
     margin-top: 20px;
@@ -28,9 +26,9 @@ const ChromeAppStore = styled.img`
 const Web3Modal = () => (
     <Modal>
         <Web3Alert>You need a Metamask!</Web3Alert>
-        <Metamask src={imgMetamask} />
+        <Metamask src={Assets.metamask} />
         <AppStoreLink href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">
-            <ChromeAppStore src={imgChromeAppStore} />
+            <ChromeAppStore src={Assets.chromeAppStore} />
         </AppStoreLink>
     </Modal>
 );

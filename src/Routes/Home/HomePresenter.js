@@ -1,11 +1,11 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Modal from '../../Components/Modal';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
 
 import background from './background.png';
 import textbox from './textbox.png';
+import Web3Modal from '../../Components/Web3Modal';
 
 const Container = styled.div`
     display: flex;
@@ -118,12 +118,11 @@ const HomePresenter = ({
     message,
     messageLength,
     loading,
-    redirect,
     redirectUrl,
     preventSubmit,
     contentTyping,
     contentSubmit,
-    modalShow,
+    modalShow
 }) => (
     <>
         <Helmet>
@@ -158,13 +157,9 @@ const HomePresenter = ({
                     </SubmitBack>
                 </Form>
             )}
-            {redirect && <Redirect to={`/love/${redirectUrl}`} />}
         </Container>
-        {modalShow && <Modal>
-            <div>
-                <h1 style={fontSize: '1.3rem'}>러브체인은 메타마스크 (혹은 브라우저 지갑) 을 필요로 합니다!</h1>
-            </div>
-        </Modal> }
+        {redirectUrl && <Redirect to={`/love/${redirectUrl}`} />}
+        {modalShow && <Web3Modal />}
     </>
 );
 

@@ -11,7 +11,6 @@ export default class extends React.Component {
         messageLength: 0,
         loading: false,
         modalShow: false,
-        redirect: false,
         redirectUrl: ''
     };
 
@@ -55,7 +54,6 @@ export default class extends React.Component {
         sendMsg(response.data, message);
         this.setState({
             loading: false,
-            redirect: true,
             redirectUrl: response.data.url
         });
     };
@@ -72,7 +70,6 @@ export default class extends React.Component {
             messageLength,
             loading,
             modalShow,
-            redirect,
             redirectUrl
         } = this.state;
         return (
@@ -80,7 +77,6 @@ export default class extends React.Component {
                 message={message}
                 messageLength={messageLength}
                 loading={loading}
-                redirect={redirect}
                 redirectUrl={redirectUrl}
                 // message :id 보내주기
                 preventSubmit={this.preventSubmit}

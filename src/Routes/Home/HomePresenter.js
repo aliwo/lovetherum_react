@@ -3,9 +3,9 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
 
-import background from './background.png';
 import textbox from './textbox.png';
 import Web3Modal from '../../Components/Web3Modal';
+import { Colors } from '../../vars';
 
 const Container = styled.div`
     display: flex;
@@ -13,9 +13,6 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    background-color: #f6e0e8;
-    background-image: url(${background});
-    background-size: 120px;
 `;
 const Logo = styled.img`
     width: 100px;
@@ -79,12 +76,12 @@ const ProgressBackground = styled.div`
     margin-right: 5%;
     width: 40%;
     border: solid;
-    border-color: #d90467;
+    border-color: ${Colors.boxShadow};
 `;
 const ProgressForeground = styled.div`
     width: calc(20% + ${props => props.messageLength} / 140 * 80%);
     height: 15px;
-    background-color: #d90467;
+    background-color: ${Colors.boxShadow};
 `;
 const MessageLength = styled.div`
     text-align: right;

@@ -23,14 +23,14 @@ const ChromeAppStore = styled.img`
     height: 100%;
 `;
 
-const Web3Modal = () => (
-    <Modal>
-        <Web3Alert>You need a Metamask!</Web3Alert>
-        <Metamask src={Assets.metamask} />
-        <AppStoreLink href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">
-            <ChromeAppStore src={Assets.chromeAppStore} />
-        </AppStoreLink>
-    </Modal>
-);
-
-export default Web3Modal;
+export default ({ showModal, modalOff }) => {
+    return (
+        <Modal showModal={showModal} modalOff={modalOff}>
+            <Web3Alert>You need a Metamask!</Web3Alert>
+            <Metamask src={Assets.metamask} />
+            <AppStoreLink href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">
+                <ChromeAppStore src={Assets.chromeAppStore} />
+            </AppStoreLink>
+        </Modal>
+    );
+};

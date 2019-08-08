@@ -1,6 +1,4 @@
-/* global web3 */
 import React from 'react';
-import Popup from 'react-popup';
 import HomePresenter from './HomePresenter';
 import LoveApi from '../../api';
 import { sendMsg } from '../../Libs/love';
@@ -13,16 +11,6 @@ export default class extends React.Component {
         modalShow: false,
         redirectUrl: ''
     };
-
-    componentDidMount() {
-        // love 를 import 하는 순간에 web3 상태를 확인합니다.
-        if (!window.web3) {
-            Popup.alert('니 메타마스크 없음! 줄여서 니메미~');
-            this.setState({ modalShow: true });
-        } else {
-            console.log('web3 인식 되었습니다.');
-        }
-    }
 
     preventSubmit = e => {
         e.preventDefault();

@@ -12,10 +12,47 @@ const Container = styled.div`
     align-items: center;
     font-size: 30px;
 `;
-const Logo = styled.img`
-    width: 100px;
-    height: 100px;
+const Logo = styled.div`
     margin: 50px;
+    width: 935px;
+    height: 436px;
+    
+    @keyframes LogoKey{
+        3% {background: url("${Assets.logo01}")}
+        6% {background: url("${Assets.logo02}")}
+        9% {background: url("${Assets.logo03}")}
+        12% {background: url("${Assets.logo04}")}
+        15% {background: url("${Assets.logo05}")}
+        18% {background: url("${Assets.logo06}")}
+        21% {background: url("${Assets.logo07}")}
+        24% {background: url("${Assets.logo08}")}
+        27% {background: url("${Assets.logo09}")}
+        30% {background: url("${Assets.logo10}")}
+        33% {background: url("${Assets.logo11}")}
+        36% {background: url("${Assets.logo12}")}
+        39% {background: url("${Assets.logo13}")}
+        42% {background: url("${Assets.logo14}")}
+        45% {background: url("${Assets.logo15}")}
+        48% {background: url("${Assets.logo16}")}
+        51% {background: url("${Assets.logo17}")}
+        54% {background: url("${Assets.logo18}")}
+        57% {background: url("${Assets.logo19}")}
+        60% {background: url("${Assets.logo20}")}
+        63% {background: url("${Assets.logo21}")}
+        66% {background: url("${Assets.logo22}")}
+        69% {background: url("${Assets.logo23}")}
+        72% {background: url("${Assets.logo24}")}
+        75% {background: url("${Assets.logo25}")}
+        78% {background: url("${Assets.logo26}")}
+        81% {background: url("${Assets.logo27}")}
+        84% {background: url("${Assets.logo28}")}
+        87% {background: url("${Assets.logo29}")}
+        90% {background: url("${Assets.logo30}")}
+        93% {background: url("${Assets.logo31}")}
+    }
+    animation-name: LogoKey;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 `;
 const Form = styled.form`
     display: flex;
@@ -123,7 +160,7 @@ const HomePresenter = ({
             <title>lovethereum | 사랑의 자물쇠</title>
         </Helmet>
         <Container>
-            <Logo src="https://seoul-p-studio.bunjang.net/product/83183224_1_1523882302_w640.jpg"></Logo>
+            <Logo></Logo>
             {loading ? (
                 <LoadingIcon src="https://media2.giphy.com/media/17mNCcKU1mJlrbXodo/giphy.gif?cid=790b76115d0a1bee4c6c456f2e57d260&rid=giphy.gif" />
             ) : (

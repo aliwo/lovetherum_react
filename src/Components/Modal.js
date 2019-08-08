@@ -32,11 +32,15 @@ export default class extends React.Component {
     state = {};
 
     render() {
-        const { children } = this.props;
+        const { children, showModal, modalOff } = this.props;
         return (
-            <Container>
-                <Content>{children}</Content>
-            </Container>
+            <>
+                {showModal && (
+                    <Container onClick={modalOff}>
+                        <Content>{children}</Content>
+                    </Container>
+                )}
+            </>
         );
     }
 }

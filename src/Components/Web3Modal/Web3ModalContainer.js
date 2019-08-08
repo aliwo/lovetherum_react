@@ -7,16 +7,20 @@ export default class extends React.Component {
     };
 
     componentDidMount() {
-        document.addEventListener('click', this.clickEvent);
         if (!window.web3) this.setState({ showModal: true });
     }
 
-    clickEvent = () => {
+    modalOff = () => {
         this.setState({ showModal: false });
     };
 
     render() {
         const { showModal } = this.state;
-        return <Web3ModalPresenter showModal={showModal} />;
+        return (
+            <Web3ModalPresenter
+                showModal={showModal}
+                modalOff={this.modalOff}
+            />
+        );
     }
 }

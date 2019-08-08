@@ -29,13 +29,17 @@ const Content = styled.div`
 `;
 
 export default class extends React.Component {
-    state = {};
+
+    constructor(props) {
+        super(props);
+        const {children, modalClose} = this.props;
+        this.state = { children, modalClose };
+    }
 
     render() {
-        const { children } = this.props;
         return (
-            <Container>
-                <Content>{children}</Content>
+            <Container onClick={this.state.modalClose}>
+                <Content onClick={event => event.stopPropagation()}>{this.state.children}</Content>
             </Container>
         );
     }

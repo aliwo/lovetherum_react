@@ -117,7 +117,8 @@ const HomePresenter = ({
     preventSubmit,
     contentTyping,
     contentSubmit,
-    modalShow
+    modalShow,
+    modalClose,
 }) => (
     <>
         <Helmet>
@@ -154,7 +155,7 @@ const HomePresenter = ({
             )}
         </Container>
         {redirectUrl && <Redirect to={`/love/${redirectUrl}`} />}
-        {modalShow && <Web3Modal />}
+        {modalShow && <Web3Modal modalClose={modalClose}/>}
     </>
 );
 

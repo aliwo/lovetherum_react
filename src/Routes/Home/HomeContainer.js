@@ -64,6 +64,10 @@ export default class extends React.Component {
         return newLineLength + textLength;
     };
 
+    modalClose = () =>{
+        this.setState({ modalShow: false });
+    };
+
     render() {
         const {
             message,
@@ -83,6 +87,7 @@ export default class extends React.Component {
                 contentTyping={this.contentTyping}
                 contentSubmit={this.contentSubmit}
                 modalShow={modalShow}
+                modalClose={this.modalClose}
             />
         );
     }

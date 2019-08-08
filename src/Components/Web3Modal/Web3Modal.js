@@ -23,8 +23,8 @@ const ChromeAppStore = styled.img`
     height: 100%;
 `;
 
-const Web3Modal = () => (
-    <Modal>
+const Web3Modal = ({modalClose}) => (
+    <Modal modalClose={modalClose}>
         <Web3Alert>You need a Metamask!</Web3Alert>
         <Metamask src={Assets.metamask} />
         <AppStoreLink href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">

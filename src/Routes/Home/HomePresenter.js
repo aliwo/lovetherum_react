@@ -34,7 +34,7 @@ const TextInputBack = styled.div`
 `;
 const TextInput = styled.textarea`
     & {
-        padding: 10px 20px 0px 50px;
+        padding: 10px 25px 0px 55px;
         color: white;
         resize: none;
         outline: none;
@@ -145,7 +145,7 @@ const HomePresenter = ({
                         </ProgressContainer>
                     </TextInputBack>
                     <SubmitBack>
-                        <Submit onClick={contentSubmit}>GO</Submit>
+                        <Submit onClick={contentSubmit}>전송</Submit>
                     </SubmitBack>
                 </Form>
             )}

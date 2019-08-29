@@ -26,7 +26,7 @@ const ChromeAppStore = styled.img`
 export default ({ showModal, modalOff }) => {
     return (
         <Modal showModal={showModal} modalOff={modalOff}>
-            <Web3Alert>You need a Metamask!</Web3Alert>
+            <Web3Alert>메타마스크 지갑 설치가 필요합니다.</Web3Alert>
             <Metamask src={Assets.metamask} />
             <AppStoreLink href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">
                 <ChromeAppStore src={Assets.chromeAppStore} />
